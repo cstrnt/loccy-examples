@@ -1,10 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { useI18n } from '../src/locales'
+import { getLocaleProps, useI18n } from '../src/locales';
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home = () => {
   const { t } = useI18n();
   return (
     <div className={styles.container}>
@@ -13,5 +10,8 @@ const Home: NextPage = () => {
     </div>
   )
 }
+
+
+export const getStaticProps= getLocaleProps();
 
 export default Home
